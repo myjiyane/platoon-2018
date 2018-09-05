@@ -117,7 +117,7 @@ public class InvoiceRegisterService {
 	   Date invoiceDate = invoice.getInvoiceDate();
 	   BigDecimal vat = invoice.getVat();
 	   BigDecimal total = invoice.getTotal();
-		
+	   
 	   if (!client.isEmpty() && (vatRate != null && vatRate >= 0) && (!invoiceDate.equals(null)) && (vat !=null && !vat.equals("null")) && (total != null && !total.equals("null"))){
 		   isValid = true;  
 	   }
