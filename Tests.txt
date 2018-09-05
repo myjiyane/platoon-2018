@@ -1,0 +1,75 @@
+/******************** FIND INVOICE************************/
+
+1. invoice not found:
+http://localhost:8080/invoices/1 (outcome: error 500)
+
+2. invalid id:
+
+http://localhost:8080/invoices/0 (outcome: error 500, invalid id found)
+
+
+
+
+
+
+
+
+/******************** FIND ALL INVOICES************************/
+
+1. empty invoice registry:
+
+http://localhost:8080/invoices (http 204, no content found)
+
+2. find invoice id 1:
+
+http://localhost:8080/invoices/1 (http 200, json)
+
+
+
+
+
+
+/******************** LOAD IVOICE************************/
+
+1. http://localhost:8080/invoices (http 201 - returns id location)
+
+{   "client": "Lungelo Hlongwane",
+    "vatRate": 14,
+    "invoiceDate": "2018-08-17T23:58:25.055",
+    "total": 292.11,
+    "vat": 35.87,
+    "lineItemList": [
+        {"quantity": 3,
+            "description": "Rubber",
+            "unitPrice": 68.33,
+            "lineItemTotal": 204.99
+        },
+        {   
+        	"quantity": 5,
+            "description": "Phone",
+            "unitPrice": 10.25,
+            "lineItemTotal": 51.25
+        }
+    ]
+}
+
+
+NOTE: PRIMARY KEYS NOT PRESENT IN THE JSON, STRATEGY - AUTO GENERATE IN BOTH ENTITIES)
+
+
+1.http://localhost:8080/invoices (http 400 INVALID JSON - BAD REQUEST)
+
+2. Missing client name (cannot be null)
+
+3. missing vat rate (cannot be null)
+
+4. missing invoice date (cannot be null)
+
+5. missing quantity (cannot be null)
+
+6.missing description (cannot be null)
+
+7.missing unitPrice (cannot be null)
+
+
+vat and total are implicit calculations through vat rate. Hence cannot not be null.
