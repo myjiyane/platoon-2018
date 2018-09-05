@@ -83,7 +83,9 @@ public class InvoiceRegisterService {
 	
 	
 	/**
+	 * @param invoice id
 	 * @return the invoice by id
+	 * @throws IllegalArgumentException
 	 */
 	public Optional<?> getInvoiceById(long id) {
 		Optional<Invoice> invoice = invoiceRepo.findById(id);
@@ -100,6 +102,7 @@ public class InvoiceRegisterService {
     
 	/**
 	 * @return find all invoices
+	 * @throws user defined InvoiceException
 	 */
 	public List<?> findAllInvoices() {
 		List<Invoice> invoiceList = invoiceRepo.findAll(); 
