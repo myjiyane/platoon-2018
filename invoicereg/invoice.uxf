@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>270</y>
+      <w>160</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>_Customer: Class_
+--
+id: int
+firstName: String
+lastName: String
+companyName: String
+customerType: char
+addrId: int
+gender: char
+username: String
+password: String
+emailAddr: String
+cellNumber: String
+phoneNumber: String
+prefCorr: String
+comms: String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>270</y>
+      <w>140</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>_Address: Class_
+--
+id: int 
+customerId: int
+addr_type: String
+addrLine_1: String
+addrLine_2: String
+addrLine_3: String
+addrLine_4: String
+street_no: int
+city: String
+postalCode: String
+countryId: String
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>130</x>
+      <y>360</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=1..2</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>540</y>
+      <w>150</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>_Cart: Class_
+--
+cartItemList: List
+netTotal: Double
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>750</y>
+      <w>140</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>_Category: Class_
+--
+id: int
+name: String
+description: String
+products: List
+lastUpdated: Date
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1070</x>
+      <y>540</y>
+      <w>180</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>_Product: Class_
+--
+id: int
+name: String
+description: String
+quantity: int
+price_per_unit: Double
+image: byte[]
+categoryName: int
+productType: int
+lastUpdated: Date
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1030</x>
+      <y>240</y>
+      <w>150</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>_Shipment: Class_
+--
+name: String
+description: String
+time_created: Date
+shipment_date: Date
+tracking_no: String
+price: Float
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>530</y>
+      <w>150</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>CartItem: Class_
+--
+id: int 
+productId: int
+quanity: int
+total: Double
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>660</y>
+      <w>290</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..n</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0;270.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>580</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..1</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>560</y>
+      <w>180</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..1
+</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>290</y>
+      <w>160</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes> Order: Class
+--
+id: int
+customerId: int
+lineItems: List
+totalPrice: Double
+orderDate: Date
+state: OrderState
+payment: PaymentState
+shipping: ShippingState
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>360</y>
+      <w>360</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=1..2</panel_attributes>
+    <additional_attributes>10.0;10.0;340.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>440</y>
+      <w>50</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..n</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>300</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..n</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>0</y>
+      <w>150</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>_Payment: Class_
+--
+id: int
+customerId: int
+amount: Double
+transactionId: int
+shipmentId: int
+orderId: int
+paymentType: String
+paymentDate: Date
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>150</y>
+      <w>40</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>60</y>
+      <w>250</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>220.0;180.0;220.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>820</y>
+      <w>190</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>_OrderState: &lt;&lt;enumeration&gt;&gt;_
+--
+Open
+Pending
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>710</y>
+      <w>200</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>_PaymentState: &lt;&lt;enumeration&gt;&gt;_
+--
+Pending
+Paid
+Failed
+CreditOwed
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>710</y>
+      <w>190</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>_OrderState: &lt;&lt;enumeration&gt;&gt;_
+--
+Open
+Pending
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>820</y>
+      <w>150</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0
+m2=1..n</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;80.0;130.0;80.0;130.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>820</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>_AddressType: &lt;&lt;enumeration&gt;&gt;_
+--
+Billing
+Shipment
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>590</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>_Country: Class_
+--
+id: int
+countryName: String
+countryISO: String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>470</y>
+      <w>40</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>810</y>
+      <w>150</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>_StockManager: Class_
+--
+products: List
+inStock: boolean
+availableProducts: List</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1130</x>
+      <y>710</y>
+      <w>50</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>940</y>
+      <w>160</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes> NewsLetter: Class
+--
+customers: List
+lineItems: List
+totalPrice: Double
+orderDate: Date
+state: OrderState
+payment: PaymentState
+shipping: ShippingState
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>90</y>
+      <w>130</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>_Invoice: Class_
+--
+invoiceId: int 
+customerId: int
+orderId: int
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>140</y>
+      <w>170</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..n</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>160</y>
+      <w>150</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..n</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>100</y>
+      <w>220</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>_CommunicatioinsManager: Class_
+--
+invoice: Invoice
+customerId: int
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>140</y>
+      <w>190</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..n</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
